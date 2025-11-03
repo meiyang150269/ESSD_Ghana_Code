@@ -340,7 +340,7 @@ save(rasters_0.005, rasters_0.01, rasters_0.05,
 # print(normalized_rasters_0.005) # length(normalized_rasters_0.005) # 64
 # print(normalized_rasters_0.01) # length(normalized_rasters_0.01) # 67
 # print(normalized_rasters_0.05) # length(normalized_rasters_0.05) # 71
-# inhabited area extraction at 0.05¡ã
+# inhabited area extraction at 0.05��
 inhabited_rasters <- rasters_0.05[c("ntl", "bltH", "blt_pro", "setl", "slum")]
 stacked_rasters <- stack(inhabited_rasters)
 binary_rasters <- stacked_rasters != 0
@@ -349,7 +349,7 @@ mask_raster <- calc(binary_rasters, fun = function(x) {
 }) # plot(mask_raster)
 mask_raster[mask_raster == 0] <- NA
 writeRaster(mask_raster, "F:/[2024.07]Ghana/Processed Data/Modelling/inhabited_2021_0.05.tif", overwrite = TRUE)
-# inhabited area extraction at 0.01¡ã
+# inhabited area extraction at 0.01��
 inhabited_rasters <- rasters_0.01[c("ntl", "bltH", "blt_pro", "setl", "slum")]
 stacked_rasters <- stack(inhabited_rasters)
 binary_rasters <- stacked_rasters != 0
@@ -358,7 +358,7 @@ mask_raster <- calc(binary_rasters, fun = function(x) {
 }) # plot(mask_raster)
 mask_raster[mask_raster == 0] <- NA
 writeRaster(mask_raster, "F:/[2024.07]Ghana/Processed Data/Modelling/inhabited_2021_0.01.tif", overwrite = TRUE)
-# inhabited area extraction at 0.005¡ã
+# inhabited area extraction at 0.005��
 # expanded_border <- st_buffer(border, dist = 0.005) # For different resolutions, the dist value needs to be modified
 inhabited_rasters <- rasters_0.005[c("ntl", "bltH", "blt_pro", "setl", "slum")]
 stacked_rasters <- stack(inhabited_rasters)
@@ -390,7 +390,7 @@ for (i in 1:length(normalized_rasters_0.05)) {
   # data frame of covariate with inhabited area masked (i.e., masked_rasters)
   rastermask_vec <- as.vector(t(as.matrix(rastermask)))
   frameall_0.05[[raster_name]] <- rastermask_vec
-  cat(paste0(raster_name, " ¡ú ",i," of ", length(normalized_rasters_0.05), " has processed successfully!\n"))
+  cat(paste0(raster_name, " �� ",i," of ", length(normalized_rasters_0.05), " has processed successfully!\n"))
 }
 saveRDS(ext_raster, file = paste0("F:/[2024.07]Ghana/Processed Data/Modelling/ext_raster_covariates_unit.rds"))
 saveRDS(frameall_0.05, file = "F:/[2024.07]Ghana/Processed Data/Modelling/all_covariates_2021_0.05.rds")
@@ -407,7 +407,7 @@ for (i in 1:length(normalized_rasters_0.01)) {
   # data frame of covariate with inhabited area masked (i.e., masked_rasters)
   rastermask_vec <- as.vector(t(as.matrix(rastermask)))
   frameall_0.01[[raster_name]] <- rastermask_vec
-  cat(paste0(raster_name, " ¡ú ",i," of ", length(normalized_rasters_0.01), " has processed successfully!\n"))
+  cat(paste0(raster_name, " �� ",i," of ", length(normalized_rasters_0.01), " has processed successfully!\n"))
 }
 saveRDS(frameall_0.01, file = "F:/[2024.07]Ghana/Processed Data/Modelling/all_covariates_2021_0.01.rds")
 # frameall_0.01 <- readRDS(file = "F:/[2024.07]Ghana/Processed Data/Modelling/all_covariates_2021_0.01.rds")
@@ -423,7 +423,7 @@ for (i in 1:length(normalized_rasters_0.005)) {
   # data frame of covariate with inhabited area masked (i.e., masked_rasters)
   rastermask_vec <- as.vector(t(as.matrix(rastermask)))
   frameall_0.005[[raster_name]] <- rastermask_vec
-  cat(paste0(raster_name, " ¡ú ",i," of ", length(normalized_rasters_0.005), " has processed successfully!\n"))
+  cat(paste0(raster_name, " �� ",i," of ", length(normalized_rasters_0.005), " has processed successfully!\n"))
 }
 saveRDS(frameall_0.005, file = "F:/[2024.07]Ghana/Processed Data/Modelling/all_covariates_2021_0.005.rds")
 # frameall_0.005 <- readRDS(file = "F:/[2024.07]Ghana/Processed Data/Modelling/all_covariates_2021_0.005.rds")
@@ -431,5 +431,4 @@ saveRDS(frameall_0.005, file = "F:/[2024.07]Ghana/Processed Data/Modelling/all_c
 # The 2022 data has not yet been processed
 #-------
 # End of the script
-
 
